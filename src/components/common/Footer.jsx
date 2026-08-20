@@ -36,7 +36,7 @@ const Footer = () => {
       ref={footerRef}
       className="
         w-full
-        bg-[#10190f]
+        bg-[#162315]
         px-6
         py-12
         text-white

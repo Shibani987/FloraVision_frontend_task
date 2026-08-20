@@ -12,22 +12,19 @@ const O2Section = () => {
   const totalSlides = o2Data.length;
   const currentSlide = o2Data[currentIndex];
 
-  /* ================= NEXT SLIDE ================= */
   const goToNext = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex + 1) % totalSlides
-    );
+    setCurrentIndex((prevIndex) => {
+      return (prevIndex + 1) % totalSlides;
+    });
   };
 
-  /* ================= PREVIOUS SLIDE ================= */
   const goToPrevious = () => {
-    setCurrentIndex(
-      (prevIndex) =>
-        (prevIndex - 1 + totalSlides) % totalSlides
-    );
+    setCurrentIndex((prevIndex) => {
+      return (prevIndex - 1 + totalSlides) % totalSlides;
+    });
   };
 
-  /* ================= SECTION OBSERVER ================= */
+  /* Scroll Reveal */
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -44,16 +41,14 @@ const O2Section = () => {
       observer.observe(section);
     }
 
-    return () => {
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, []);
 
-  /* ================= PRELOAD IMAGES ================= */
+  /* Preload Slide Images */
   useEffect(() => {
-    o2Data.forEach((item) => {
-      const image = new Image();
-      image.src = item.image;
+    o2Data.forEach(({ image }) => {
+      const img = new Image();
+      img.src = image;
     });
   }, []);
 
@@ -61,36 +56,21 @@ const O2Section = () => {
     <section
       ref={sectionRef}
       className="
-        w-full
-        bg-[#10190f]
-
+        w-full bg-[#162315]
         px-4 py-16
-
-        sm:px-6
-        sm:py-20
-
-        lg:px-10
-        lg:py-24
-
+        sm:px-6 sm:py-20
+        lg:px-10 lg:py-24
         xl:px-16
-
         min-[1400px]:px-[clamp(4rem,7vw,10rem)]
         min-[1400px]:py-[clamp(6rem,8vw,12rem)]
       "
     >
-      {/* ================= SECTION HEADING ================= */}
-      <SectionHeading>
-        Our Best O2
-      </SectionHeading>
+      <SectionHeading>Our Best O2</SectionHeading>
 
-      {/* ================= CARD ================= */}
+      {/* O2 Card */}
       <div
         className="
-          mx-auto
-          mt-16
-          w-full
-          max-w-[1400px]
-
+          mx-auto mt-16 w-full max-w-[1400px]
           sm:mt-20
           lg:mt-24
         "
@@ -113,14 +93,10 @@ const O2Section = () => {
         </div>
       </div>
 
-      {/* ================= SLIDE DOTS ================= */}
+      {/* Slide Dots */}
       <div
         className="
-          mt-12
-          flex
-          items-center
-          justify-center
-          gap-2
+          mt-12 flex items-center justify-center gap-2
         "
       >
         {o2Data.map((item, index) => {
@@ -133,14 +109,12 @@ const O2Section = () => {
               onClick={() => setCurrentIndex(index)}
               aria-label={`Go to slide ${index + 1}`}
               className={`
-                rounded-full
-                transition-all
-                duration-300
-
+                h-1.5 rounded-full
+                transition-all duration-300
                 ${
                   isActive
-                    ? "h-1.5 w-6 bg-white"
-                    : "h-1.5 w-1.5 bg-white/40 hover:bg-white/70"
+                    ? "w-6 bg-white"
+                    : "w-1.5 bg-white/40 hover:bg-white/70"
                 }
               `}
             />
