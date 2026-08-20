@@ -6,6 +6,7 @@ export const navItems = [
   {
     label: "Plants Type",
     href: "#plants",
+    hasDropdown: true,
   },
   {
     label: "More",

@@ -6,14 +6,12 @@ const CustomCard = ({
   return (
     <article
       className={`
-        relative
-        overflow-visible
+        relative overflow-visible
         drop-shadow-[0_18px_35px_rgba(0,0,0,0.22)]
         ${className}
       `}
     >
       {/* ================= CARD BACKGROUND ================= */}
-
       <div
         className="
           absolute inset-0
@@ -27,7 +25,6 @@ const CustomCard = ({
       />
 
       {/* ================= CARD BORDER ================= */}
-
       <svg
         className="
           pointer-events-none
@@ -38,36 +35,36 @@ const CustomCard = ({
         preserveAspectRatio="none"
         fill="none"
       >
-        <path
-          d="
-            M 52 1
-            H 60
+        {/* Full Border */}
+<path
+  d="
+    M 52 1
+    H 60
 
-            C 100 1, 112 30, 200 36
+    C 100 1, 112 30, 200 36
 
-            C 288 30, 300 1, 340 1
+    C 288 30, 300 1, 340 1
 
-            H 348
-            Q 399 1, 399 52
+    H 348
+    Q 399 1, 399 52
 
-            V 390
-            Q 399 439, 348 439
+    V 390
+    Q 399 439, 348 439
 
-            H 52
-            Q 1 439, 1 390
+    H 52
+    Q 1 439, 1 390
 
-            V 52
-            Q 1 1, 52 1
-          "
-          stroke="rgba(255,255,255,0.15)"
-          strokeWidth="0.5"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+    V 52
+    Q 1 1, 52 1
+  "
+  stroke="rgba(255,255,255,0.15)"
+  strokeWidth="0.5"
+  fill="none"
+  strokeLinecap="round"
+  strokeLinejoin="round"
+/>
 
-        {/* LEFT TOP HIGHLIGHT */}
-
+        {/* ================= LEFT TOP HIGHLIGHT ================= */}
         <path
           d="
             M 1 105
@@ -81,8 +78,7 @@ const CustomCard = ({
           strokeLinejoin="round"
         />
 
-        {/* RIGHT BOTTOM HIGHLIGHT */}
-
+        {/* ================= RIGHT BOTTOM HIGHLIGHT ================= */}
         <path
           d="
             M 295 439
@@ -98,19 +94,12 @@ const CustomCard = ({
         />
       </svg>
 
-      {/* ================= CARD CONTENT ================= */}
-
-      <div
-        className={`
-          relative z-30
-          ${contentClassName}
-        `}
-      >
+      {/* ================= CUSTOM CONTENT ================= */}
+      <div className={`relative z-30 ${contentClassName}`}>
         {children}
       </div>
 
-      {/* ================= CARD CLIP PATH ================= */}
-
+      {/* ================= CARD CLIP SHAPE ================= */}
       <svg
         className="absolute h-0 w-0"
         aria-hidden="true"

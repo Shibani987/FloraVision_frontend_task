@@ -69,6 +69,10 @@ const NavLinks = ({ isMenuOpen, setIsMenuOpen }) => {
           href={item.href}
           onClick={handleLinkClick}
           className="
+            flex
+            items-center
+            gap-2
+
             font-normal
             leading-none
             text-white/90
@@ -90,6 +94,25 @@ const NavLinks = ({ isMenuOpen, setIsMenuOpen }) => {
           "
         >
           {item.label}
+
+          {item.hasDropdown && (
+            <span
+              className="
+                inline-block
+                h-0
+                w-0
+                shrink-0
+
+                border-l-[5px]
+                border-r-[5px]
+                border-t-[7px]
+
+                border-l-transparent
+                border-r-transparent
+                border-t-white/90
+              "
+            />
+          )}
         </a>
       ))}
     </div>
