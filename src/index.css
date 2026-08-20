@@ -1,0 +1,191 @@
+/* ================= GOOGLE FONTS ================= */
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Inter:wght@700;800&display=swap");
+
+@import "tailwindcss";
+
+/* ================= GLOBAL RESET ================= */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #10190f;
+  color: white;
+  font-family: Inter, sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ================= NAVBAR ANIMATION ================= */
+@keyframes navbarReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-navbar-reveal {
+  animation: navbarReveal 0.8s ease-out both;
+}
+
+/* ================= HERO REVEAL ANIMATIONS ================= */
+
+/* Reveal content from the left */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Reveal content from the bottom */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ================= FEATURED PLANT REVEAL ================= */
+
+@keyframes plantReveal {
+  from {
+    opacity: 0;
+    
+  }
+
+  to {
+    opacity: 1;
+    
+  }
+}
+
+/* ================= TRENDY PLANTS SCROLL REVEAL ================= */
+
+@keyframes trendySectionReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.98);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-trendy-section-reveal {
+  animation: trendySectionReveal 0.8s ease-out forwards;
+}
+
+/* ================= TOP SELLING CARD REVEAL ANIMATION ================= */
+
+@keyframes topSellingReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.96);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ================= TOP SELLING ANIMATION CLASS ================= */
+
+.animate-top-selling-reveal {
+  opacity: 0;
+  animation: topSellingReveal 0.7s ease-out forwards;
+}
+
+/* ================= CUSTOMER REVIEW CARD REVEAL ANIMATION ================= */
+
+@keyframes reviewCardReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.96);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ================= CUSTOMER REVIEW ANIMATION CLASS ================= */
+
+.animate-review-card-reveal {
+  opacity: 0;
+  animation: reviewCardReveal 0.7s ease-out forwards;
+}
+
+/* ================= O2 CARD REVEAL ANIMATION ================= */
+
+@keyframes o2CardReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.96);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ================= O2 CARD ANIMATION CLASS ================= */
+
+.animate-o2-card-reveal {
+  opacity: 0;
+  animation: o2CardReveal 0.8s ease-out forwards;
+}
+
+@keyframes footerReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-footer-reveal {
+  animation: footerReveal 0.8s ease-out forwards;
+}
